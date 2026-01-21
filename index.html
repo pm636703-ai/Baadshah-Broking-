@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baadshah Broking Official</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1409146490835430');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1409146490835430&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<link href="vendor/external_0.css" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+}
+
+.container{
+  width:100%;
+  max-width:420px;
+  background:rgba(255,255,255,0.14);
+  backdrop-filter:blur(22px);
+  border-radius:28px;
+  padding:32px 22px 26px;
+  text-align:center;
+  box-shadow:0 30px 70px rgba(0,0,0,0.35);
+}
+
+/* PROFILE */
+.profile{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.profile-img{
+  position:relative;
+  width:94px;
+  height:94px;
+}
+
+.profile-img img{
+  width:94px;
+  height:94px;
+  border-radius:50%;
+  border:3px solid rgba(255,255,255,0.85);
+  object-fit:cover;
+}
+
+.online-dot{
+  position:absolute;
+  bottom:6px;
+  right:6px;
+  width:14px;
+  height:14px;
+  background:#2ecc71;
+  border-radius:50%;
+  border:2px solid #fff;
+  animation:pulse 1.6s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(46,204,113,.7)}
+  70%{box-shadow:0 0 0 10px rgba(46,204,113,0)}
+  100%{box-shadow:0 0 0 0 rgba(46,204,113,0)}
+}
+
+.profile h1{
+  margin-top:14px;
+  font-size:22px;
+  font-weight:700;
+}
+
+.profile p{
+  font-size:13px;
+  opacity:0.85;
+  margin-top:4px;
+}
+
+/* JOIN COUNT */
+.join-count{
+  margin-top:8px;
+  font-size:13px;
+  opacity:0.9;
+}
+
+.join-count span{
+  color:#00eaff;
+  font-weight:600;
+}
+
+/* BUTTON */
+.join-btn{
+  margin:22px auto 24px;
+  width:100%;
+  padding:16px;
+  background:linear-gradient(135deg,#00eaff,#0072ff);
+  border-radius:18px;
+  font-size:15px;
+  font-weight:600;
+  color:#fff;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 14px 35px rgba(0,114,255,0.55);
+  cursor:pointer;
+}
+
+.join-btn::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:120%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.7),transparent);
+  animation:shine 3s infinite;
+}
+
+@keyframes shine{
+  0%{left:-120%}
+  60%{left:120%}
+  100%{left:120%}
+}
+
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.feature{
+  background:rgba(255,255,255,0.18);
+  border-radius:18px;
+  padding:16px 14px;
+  text-align:left;
+}
+
+.feature span{
+  font-size:22px;
+}
+
+.feature h4{
+  margin-top:8px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.feature p{
+  margin-top:4px;
+  font-size:12px;
+  opacity:0.85;
+  line-height:1.5;
+}
+
+/* TRUST */
+.trust{
+  margin-top:18px;
+  font-size:12px;
+  line-height:1.6;
+  opacity:0.85;
+}
+
+/* DISCLAIMER */
+.disclaimer{
+  margin-top:14px;
+  font-size:11px;
+  opacity:0.65;
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  bottom:18px;
+  left:18px;
+  background:rgba(0,0,0,0.88);
+  padding:12px 14px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.4s ease;
+  z-index:999;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.popup.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.popup-avatar img{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+}
+
+.popup-text{
+  text-align:left;
+  font-size:13px;
+}
+
+.popup-text small{
+  font-size:11px;
+  opacity:0.7;
+  display:block;
+  margin-top:2px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="profile">
+    <div class="profile-img">
+      <img src="profile.jpg" alt="Profile">
+      <div class="online-dot"></div>
+    </div>
+    <h1>BAADSHAH BROKING</h1>
+    <p>No Tips • Only Trading Skills</p>
+    <div class="join-count">
+      <span id="count">12,480</span> traders joined
+    </div>
+  </div>
+
+  <a href="https://telegram.me/+EpMBEIIMQVBhNzVl" target="_blank" class="join-btn" id="telegramBtn">
+    <img src="https://telegram.org/img/t_logo.png" width="22">
+    Join Free Telegram
+  </a>
+
+  <div class="features">
+    <div class="feature">
+      <span>📊</span>
+      <h4>Market Insights</h4>
+      <p>Daily structure based analysis</p>
+    </div>
+    <div class="feature">
+      <span>📈</span>
+      <h4>Price Action</h4>
+      <p>Trend, zones & entries</p>
+    </div>
+    <div class="feature">
+      <span>💹</span>
+      <h4>Trading Framework</h4>
+      <p>RR, execution & exits</p>
+    </div>
+    <div class="feature">
+      <span>🧠</span>
+      <h4>Trader Psychology</h4>
+      <p>Mindset & discipline</p>
+    </div>
+  </div>
+
+  <div class="trust">
+    ✔ Education Only • ✔ No Tips • ✔ Risk First
+  </div>
+
+  <div class="disclaimer">
+    This platform is for educational purposes only. Market investments are subject to risk.
+  </div>
+
+</div>
+
+<!-- REALISTIC POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-avatar">
+    <img src="https://telegram.org/img/t_logo.png">
+  </div>
+  <div class="popup-text">
+    <div id="popupName"></div>
+    <small id="popupTime"></small>
+  </div>
+</div>
+
+<script>
+// Telegram Join Button Tracking Function
+function trackTelegramJoin() {
+  // Check if Facebook Pixel is loaded
+  if (typeof fbq !== 'undefined') {
+    // Track as Lead event (sabse important for conversions)
+    fbq('track', 'Lead', {
+      content_name: 'Telegram Channel Join',
+      content_category: 'Trading Education',
+      value: 0,
+      currency: 'INR'
+    });
+    
+    // Track as Complete Registration (conversion tracking ke liye)
+    fbq('track', 'CompleteRegistration', {
+      content_name: 'Free Telegram Trading Channel',
+      status: 'free_signup',
+      value: 0,
+      currency: 'INR'
+    });
+    
+    // Additional: Contact event for better tracking
+    fbq('track', 'Contact', {
+      method: 'telegram',
+      content_name: 'Baadshah Broking Telegram Channel'
+    });
+    
+    console.log('✅ Facebook Pixel: Telegram join button clicked - All events tracked');
+  } else {
+    console.warn('⚠️ Facebook Pixel not loaded');
+  }
+}
+
+// Get the Telegram button
+const telegramBtn = document.getElementById('telegramBtn');
+
+// Add click event listener to track button clicks
+telegramBtn.addEventListener('click', function(event) {
+  // Track the click immediately
+  trackTelegramJoin();
+  
+  // Let the link open normally after tracking
+  // No need to prevent default
+});
+
+// Optional: Track button hover (additional engagement)
+telegramBtn.addEventListener('mouseenter', function() {
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'ViewContent', {
+      content_name: 'Telegram Button Hover',
+      content_category: 'Button Interaction'
+    });
+  }
+});
+
+// Popup and counter functionality (original code)
+let count = 12480;
+const countEl = document.getElementById("count");
+const popup = document.getElementById("popup");
+const popupName = document.getElementById("popupName");
+const popupTime = document.getElementById("popupTime");
+
+const names = ["Amit","Rohit","Karan","Neha","Pooja","Rahul","Ankit","Deepak","Nikhil","Priya","Manish","Sneha","Akash"];
+
+function showPopup(){
+  count += Math.floor(Math.random()*3)+1;
+  countEl.innerText = count.toLocaleString();
+
+  const name = names[Math.floor(Math.random()*names.length)];
+  const mins = Math.floor(Math.random()*5)+1;
+
+  popupName.innerText = `${name} joined Telegram`;
+  popupTime.innerText = `${mins} min ago`;
+
+  popup.classList.add("show");
+  setTimeout(()=>popup.classList.remove("show"),2000);
+
+  const nextTime = Math.floor(Math.random()*4000)+2000;
+  setTimeout(showPopup, nextTime);
+}
+
+setTimeout(showPopup, 3000);
+</script>
+
+</body>
+</html>
